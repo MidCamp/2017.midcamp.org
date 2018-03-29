@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7]><html class="iem7"  lang="en" dir="ltr"><![endif]-->
+<!--[if lte IE 6]><html class="lt-ie9 lt-ie8 lt-ie7"  lang="en" dir="ltr"><![endif]-->
+<!--[if (IE 7)&(!IEMobile)]><html class="lt-ie9 lt-ie8"  lang="en" dir="ltr"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"  lang="en" dir="ltr"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)]><!--><html  lang="en" dir="ltr"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<link rel="shortcut icon" href="../sites/all/themes/sitetheme/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="canonical" href="news.html" />
+<link rel="shortlink" href="news.html" />
+  <title>All News | MidCamp</title>
+
+      <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+  <!-- <a href="https://plus.google.com/105676072717448976925" rel="publisher" /> -->
+  <link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_lQaZfjVpwP_oGNqdtWCSpJT1EMqXdMiU84ekLLxQnc4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_3FbOFIbm4HLRl_7z6FM7bfe7D1hzM-Uxkh6PQmPJ2M4.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_bOcwTxDoTV-apgDdf9ureTkOTTALOC112FDAsBdRWRs.css" media="all" />
+<link type="text/css" rel="stylesheet" href="../sites/default/files/css/css_z1_sqphhD66hao0DCAdyco_0FR4yczLVgyLydcxAxZI.css" media="all" />
+  <script src="../sites/default/files/js/js_gPM6NXOQjN2XM2JWQGfy07nKmcdDFrL289YA7h80ySs.js"></script>
+<script src="../sites/default/files/js/js_gPqjYq7fqdMzw8-29XWQIVoDSWTmZCGy9OqaHppNxuQ.js"></script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-60086119-2", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");</script>
+<script src="../sites/default/files/js/js_DPXH2olh_wGicJ-llOI5fO6iHmi7zasIS341SIlrF3E.js"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"sitetheme","theme_token":"iIk_p2PknawiuD5sujZoeQlliqGzsiMpP-6GiGGeVfU","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"sites\/all\/modules\/contrib\/date\/date_api\/date.css":1,"sites\/all\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/user\/user.css":1,"sites\/all\/modules\/contrib\/youtube\/css\/youtube.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/ajaxblocks\/ajaxblocks.css":1,"sites\/all\/themes\/sitetheme\/system.menus.css":1,"sites\/all\/themes\/sitetheme\/system.messages.css":1,"sites\/all\/themes\/sitetheme\/system.theme.css":1,"sites\/all\/themes\/sitetheme\/css\/styles.css":1},"js":{"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/google_analytics\/googleanalytics.js":1,"0":1,"sites\/all\/modules\/contrib\/ajaxblocks\/ajaxblocks.js":1,"sites\/all\/themes\/sitetheme\/js\/script.js":1,"sites\/all\/themes\/sitetheme\/js\/google_fonts.js":1,"1":1}},"better_exposed_filters":{"views":{"front_news":{"displays":{"page_1":{"filters":[]}}},"random_sponsor":{"displays":{"panel_pane_1":{"filters":[]}}}}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"ajaxblocks":"blocks=panels_mini-sponsor_footer_logos\u0026path=about\/news"});</script>
+      <!--[if lt IE 9]>
+    <script src="/sites/all/themes/zen/js/html5-respond.js"></script>
+    <![endif]-->
+  </head>
+<body class="html not-front not-logged-in no-sidebars page-about page-about-news section-about page-views" >
+      <p id="skip-link">
+      <a href="news.html#main-menu" class="element-invisible element-focusable">Jump to navigation</a>
+    </p>
+      <div class="header__top">
+    <div class="header__region region region-header">
+    <div id="block-system-user-menu" class="block block-system block-menu first odd" role="navigation">
+
+        <h2 class="block__title block-title">User menu</h2>
+    
+  <ul class="menu"><li class="menu__item is-leaf first last leaf menu__item level-1 menu__item--log-in"><a href="../user/login.html" title="" class="menu__link">Log in</a></li></ul>
+</div>
+<div id="block-block-1" class="block block-block last even">
+
+      
+  <p>March 30th - April 2nd - DePaul University - Lincoln Park&nbsp;- 2250 N Sheffield - Chicago, IL</p>
+
+</div>
+  </div>
+</div>
+<div id="navigation" class="clearfix">
+  <div class="inner">
+    <a href="../index.html" title="Home" rel="home" class="logo-mobile">MidCamp</a>
+    <div class="links--mobile__container">
+      <input type="checkbox" id="toggle-button"><label for="toggle-button" onclick></label>
+<div class="menus">
+  <nav id="user-menu" role="navigation" tabindex="-1"><ul class="menu--user-menu menu links"><li class="menu__item is-leaf first last leaf menu__item level-1 menu__item--log-in"><a href="../user/login.html" title="" class="menu__link">Log in</a></li></ul></nav>  <nav id="main-menu" role="navigation" tabindex="-1"><ul class="menu--main-menu menu links"><li class="menu__item is-expanded first expanded active-trail dropdown menu-item level-1"><input type="checkbox" /><a href="../node/14.html" class="menu__link active-trail" data-toggle="dropdown" aria-haspopup="true">Camp<i class="icon theme-icon-arrow-down"></i></a><ul class="menu--main-menu_sub dropdown-menu menu"><li class="menu__item is-leaf first leaf level-2"><a href="../node/15.html" class="menu__link">Venue</a></li><li class="menu__item is-leaf leaf level-2"><a href="../node/21.html" class="menu__link">Sprints</a></li><li class="menu__item is-leaf leaf level-2"><a href="../node/178.html" class="menu__link">Travel</a></li><li class="menu__item is-leaf leaf level-2"><a href="news.html" class="menu__link active">News</a></li><li class="menu__item is-leaf leaf level-2"><a href="../attendees.html" class="menu__link">Attendees</a></li><li class="menu__item is-leaf leaf level-2"><a href="../node/327.html" class="menu__link">Organizers</a></li><li class="menu__item is-leaf last leaf level-2"><a href="../node/179.html" class="menu__link">Media Policy</a></li></ul></li><li class="menu__item is-leaf leaf menu-item level-1"><a href="../tickets.html" class="menu__link">Tickets</a></li><li class="menu__item is-expanded expanded dropdown menu-item level-1"><input type="checkbox" /><a href="../sponsors.html" class="menu__link" data-toggle="dropdown" aria-haspopup="true">Sponsors<i class="icon theme-icon-arrow-down"></i></a><ul class="menu--main-menu_sub dropdown-menu menu"><li class="menu__item is-leaf first leaf level-2"><a href="../become-a-sponsor.html" class="menu__link">Become a Sponsor</a></li><li class="menu__item is-leaf last leaf level-2"><a href="../jobs.html" class="menu__link">Jobs</a></li></ul></li><li class="menu__item is-expanded expanded dropdown menu-item level-1"><input type="checkbox" /><a href="../schedule.html" title="" class="menu__link" data-toggle="dropdown" aria-haspopup="true">Schedule<i class="icon theme-icon-arrow-down"></i></a><ul class="menu--main-menu_sub dropdown-menu menu"><li class="menu__item is-leaf first leaf level-2"><a href="../trainings.html" title="" class="menu__link">Training Day</a></li><li class="menu__item is-leaf leaf level-2"><a href="../sessions/friday.html" title="" class="menu__link">Friday Sessions</a></li><li class="menu__item is-leaf leaf level-2"><a href="../sessions/saturday.html" title="" class="menu__link">Saturday Sessions</a></li><li class="menu__item is-leaf leaf level-2"><a href="../node/151.html" class="menu__link">Speaker Resources</a></li><li class="menu__item is-leaf leaf level-2"><a href="../node/5.html" class="menu__link">Speaker Terms and Conditions</a></li><li class="menu__item is-leaf last leaf level-2"><a href="../node/320.html" class="menu__link">Community Outreach</a></li></ul></li><li class="menu__item is-leaf last leaf menu-item level-1"><a href="../midcampagram.html" title="" class="menu__link">MidCampagram</a></li></ul></nav></div>
+    </div>
+  </div>
+</div>
+<div class="header-wrapper">
+  <header class="header__region" id="header" role="banner">
+    <div class="header__badge">
+              <a href="../index.html" title="Home" rel="home" class="header__logo" id="logo"><img src="../sites/all/themes/sitetheme/logo.png" alt="Home" class="header__logo-image" /></a>
+      
+              <div class="header__name-and-slogan" id="name-and-slogan">
+          
+                                <h1 class="page__title title" id="page-title">All News</h1>
+                            </div>
+          </div>
+  </header>
+</div>
+<div id="page">
+  <div id="main">
+    <div id="content" class="column" role="main">
+            <a id="main-content"></a>
+                              
+
+
+<div class="view view-front-news view-id-front_news view-display-id-page_1 view-dom-id-eb2285885f1647c8c0ef75b5cc61bfa0">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/361.html">MidCamp 2018, March 8-11</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Monday, April 24, 2017 - 9:58am</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>MidCamp 2017 was a huge success! Thank you to everyone who came, helped, supported, spoke and attended!</p>
+
+<p><a href="http://2018.midcamp.org">MidCamp 2018</a> is confirmed for March 8th through March 11th, 2018 back here at the DePaul University Lincoln Park Student Center!</p>
+
+<p>Come and join us next year!</p>
+
+<p>Stay connected:</p>
+
+<ul>
+	<li><a href="https://www.midcamp.org/midcampagram">Midcampagram</a></li>
+	<li><a href="https://www.flickr.com/photos/midcamp/">MidCamp photos on Flickr</a></li>
+	<li><a href="https://twitter.com/search?f=realtime&amp;q=%23MidCamp&amp;src=typd">#MidCamp</a></li>
+	<li>Recordings of sessions are on the <a href="https://www.youtube.com/channel/UCWf6JWaRR8GIHbrZyDFhV3A/feed">MidCamp youtube channel</a></li>
+	<li><a href="https://twitter.com/MidwestCamp">MidCamp on Twitter</a></li>
+	<li><a href="https://www.facebook.com/MidCamp">MidCamp on Facebook</a></li>
+	<li><a href="https://plus.google.com/+MidCampOrg">MidCamp on Google+</a></li>
+	<li><a href="https://joind.in/event/midcamp-2017">MidCamp on Joind.in</a></li>
+</ul>
+</div>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/354.html">Free Community Drupal Training at MidCamp 2017</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Tuesday, March 28, 2017 - 10:31am</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>It started as a question.&nbsp; Why do Drupal camps only have trainings on a separate day?&nbsp; The legitimate answer was that trainings and sessions should not compete for audiences for a normal Drupal camp audience.&nbsp; But what if the trainings were not for that normal Drupal camp audience?</p>
+
+<p>When all of the hard work was done by the MidCamp venue team to secure the DePaul University Student Center for MidCamp 2017, we immediately started exploring the idea of having half day Drupal training sessions for those that would nornally not attend a Drupal camp.&nbsp; We reserved two extra rooms for this idea.</p>
+
+<p>While I looked for interested parties who would be interested in attending the trainings, Joseph Purcell of Digital Bridge Solutions worked to organize an <strong>Introduction to Making Websites with Drupal</strong> itinerary and found great trainers to lead the event: <a href="http://www.cdm.depaul.edu/about/pages/people/facultyinfo.aspx?fid=1205">Michael Chase</a>, &lrm;Instructor at DePaul University College of Computing and Digital Media, and <a href="http://www.hs2solutions.com/who-we-are/aaron-meeuwsen">Aaron Meeuwsen</a>, Web Developer at HS2 Solutions, along with several other volunteers, Scott Weston and Matt Ramir from HS2, and Doug Dobrzynski from PMMI Media Group.&nbsp; Without them, we couldn&#39;t have made this happen. I would also like to thank my employer, <a href="http://www.xenomedia.com">Xeno Media</a> for contributing some of my time to help organize these trainings.</p>
+
+<p>We&#39;ve reached out to, and are happy to be working with such great local Chicago technology groups.&nbsp; <a href="https://www.girldevelopit.com/chapters/chicago">Girl Develop It</a>, which provides programs for adult women interested in learning web and software development in a judgment-free environment, the <a href="https://itkan.wordpress.com/about/">IT Knowledge and Abilities Network</a> (ITKAN), which provides professional networking and growth organization with a focus on professionals and aspiring professionals with disabilities, and <a href="https://www.womenwhocode.com/about">Women Who Code</a>, a global non-profit dedicated to inspiring women to excel in technology careers all answered our call.</p>
+
+<p>But we still have room for more.&nbsp; Do you know of someone who would benefit from free Intro to Drupal Training?&nbsp; We want you to invite them!</p>
+
+<p>The trainings will cover basic CMS tasks like editing and publishing content, creating navigation menus, and placement of content on the site, and will approach into more complex tasks such as module installation and site configurations. Additionally, we&rsquo;ll show the various ways the Drupal community can help through the issue queue, meetups, job boards, and mentorship.</p>
+
+<p>The sessions are:</p>
+
+<ul>
+	<li>Friday March 31st -&nbsp;9:00 am - 12:00 pm</li>
+	<li>Friday March 31st -&nbsp;1:00 pm - 4:00 pm</li>
+	<li>Saturday April 1st -&nbsp;9:00 am - 12:00 pm</li>
+	<li>Saturday April 1st -&nbsp;1:00 pm - 4:00 pm</li>
+</ul>
+
+<p><a class="btn" href="https://www.eventbrite.com/e/midcamp-2017-free-intro-to-making-websites-with-drupal-community-training-tickets-32783401035">Get your free ticket today!</a></p>
+
+<p>Don&#39;t be shy, please share and and invite anyone you think would benefit from these trainings.&nbsp; Ticket enrollment is open, and we would love to have every seat filled!</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/355.html">Two days before before MidCamp</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Tuesday, March 28, 2017 - 12:57am</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Two days before before MidCamp, when all round the rug, not a creature was stirring, not even a bug.</p>
+
+<p>Though the house was so empty, and missing it&#39;s stir, our <a href="https://goo.gl/forms/Y4aMYTEI3FEHvunk2">Volunteer coordinator was out saying burrr (don&#39;t leave me out in the cold)</a>. Our <a href="https://www.midcamp.org/sprints">Sprint lead was looking for sprinters to sprint,</a> and our <a href="https://www.midcamp.org/trainings">Trainers were looking for trainees to imprint</a>!</p>
+
+<p>MidCamp 2017 has <a href="https://www.midcamp.org/tickets">45 sessions for you to attend on Friday and Saturday</a>, <a href="https://www.midcamp.org/trainings">4 Full day trainings on Thursday</a>, and <a href="https://www.midcamp.org/community-outreach">4 Free half day trainings</a> for you to invite anyone new to Drupal to attend.</p>
+
+<p>In addition, we have socials for you to attend on <a href="https://www.midcamp.org/game-night-sponsored-palantirnet">Friday</a> and <a href="https://www.midcamp.org/evening-social-sponsored-platformsh">Saturday</a>, and a <a href="https://www.midcamp.org/sprints">Sunday contrib Sprint</a> to give back to Drupal.</p>
+
+<p>It&#39;s spring in Chicago, and we hope you can join us!</p>
+
+<p><a class="btn" href="https://www.midcamp.org/tickets">Get your tickets today!</a></p>
+</div>  </div>  </div>
+  <div class="views-row views-row-4 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/349.html">Call for Volunteers</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Thursday, March 23, 2017 - 12:35pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><h2>We need you!</h2>
+
+<p dir="ltr">Want to give back to the Drupal Community without writing a line of code? Volunteer to help out at MidCamp 2017. &nbsp;We&rsquo;re looking for people to help with all kinds of tasks including:<span style="font-family:sans-serif,arial,verdana,trebuchet ms">&nbsp;</span></p>
+
+<h3 dir="ltr">Setup/Teardown</h3>
+
+<ul>
+	<li dir="ltr">
+		<p dir="ltr">For setup, we need help making sure registration is ready to roll, and getting T-shirts ready to move.</p>
+	</li>
+	<li dir="ltr">
+		<p dir="ltr">For teardown, we need to undo all the setup including packing up all the rooms, the registration desk, cleaning signage, and making it look like we were never there.</p>
+	</li>
+</ul>
+
+<h3 dir="ltr">Registration and Ticketing</h3>
+
+<ul>
+	<li>
+		<p dir="ltr">We need ticket scanners, program dispersers, and people to answer questions.</p>
+	</li>
+</ul>
+
+<h3 dir="ltr">Room Monitors</h3>
+
+<ul>
+	<li>
+		<p dir="ltr">Pick your sessions and count heads, make sure the speakers have what they need to survive, and help with the in-room A/V</p>
+	</li>
+</ul>
+
+<p dir="ltr">If you&rsquo;re interested in volunteering or would like to find out more, please contact us.</p>
+
+<p><a class="btn" href="https://goo.gl/forms/Y4aMYTEI3FEHvunk2">Volunteer!</a></p>
+</div>  </div>  </div>
+  <div class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/348.html">MidCamp 2017 Schedule</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Thursday, March 23, 2017 - 12:54pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><h2>Thursday is Training Day</h2>
+
+<p>On Thursday, we have four great full day Training sessions planned. &nbsp;We have lined up a group of incredible trainers who are going to donate their time to lead full day, in depth training sessions. &nbsp;Each session is $40, and is additional to the price of the camp.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/trainings">View all trainings sessions</a></p>
+
+<h4>View all of the individual trainings:</h4>
+
+<ul>
+	<li><a href="https://www.midcamp.org/training/drupal-development-best-practice-workflows-pantheon">Drupal Development Best Practice Workflows on Pantheon</a></li>
+	<li><a href="https://www.midcamp.org/training/introduction-drupal-8">Introduction to Drupal 8</a></li>
+	<li><a href="https://www.midcamp.org/training/theming-drupal-8">Theming Drupal 8</a></li>
+	<li><a href="https://www.midcamp.org/training/what-am-i-getting-myself-drupal-crash-course-non-developers">What Am I Getting Myself Into? A Drupal Crash Course for Non-developers</a></li>
+</ul>
+
+<h2>Friday and Saturday Session Schedule</h2>
+
+<p>The MidCamp session team has been hard at work placing all of our selected sessions in the perfect place. &nbsp;Checkout the Friday and Saturday session schedules!</p>
+
+<p><a class="btn" href="https://www.midcamp.org/sessions/friday">View all Friday sessions</a> <a class="btn" href="https://www.midcamp.org/sessions/saturday">View all Saturday sessions</a></p>
+
+<h2>Sprints</h2>
+
+<p>At MidCamp 2016, the Sprint room was always abuzz with activity. &nbsp;There was <a href="http://www.marcdrummond.com/posts/2016/03/25/drupal-front-end-future">so</a> <a href="http://www.marcdrummond.com/posts/2016/04/12/drupal-theme-system-personas">much</a> <a href="https://ffwagency.com/blog/midcamp-recap-drupal-frontend-importance-events">activity</a> on those who work on the Frontend of Drupal, and a concentrated effort to get Drupal Commerce to it&#39;s first Release candidate.</p>
+
+<p>If you want to sprint, stop by these rooms any of the days. &nbsp;If you are interested in mentoring, or leading sprints, please contact <a href="mailto:midcampsprints@gmail.com">midcampsprints@gmail.com</a>. &nbsp;We ask if you are coming on Thursday and Sunday that you get a <a href="https://www.midcamp.org/tickets">free ticket</a> so we can make sure to get enough food and coffee.</p>
+
+<ul>
+	<li>Thursday sprints will take place in Room 220, with room for 80 people</li>
+	<li>Sprinting during sessions Friday and Saturday will take place in Room 120AB, starting after the keynote</li>
+	<li>Sunday sprints will take place&nbsp;in Room 314A and 314B, with room for 60 people in each room</li>
+</ul>
+
+<p>Thanks for reading this far! &nbsp;We hope to see you at the camp!</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-6 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/328.html">MidCamp 2017 keynote, sessions, and trainings, oh my!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Thursday, March 23, 2017 - 12:55pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p><img alt="Emma" src="https://www.midcamp.org/sites/default/files/styles/large/public/users/8h1ji3yp.jpg?itok=XzLSckE3" style="border-radius: 50%; float: right; margin: 0 0 20px 20px; width: 200px; height: auto;" /></p>
+
+<h2>Keynote Speaker</h2>
+
+<p>We are pleased as punch to announce that <strong>Emma Karayiannis</strong> will be the keynote speaker for MidCamp 2017.</p>
+
+<p>Emma is a huge Open Source community advocate. Over the past 4 years Emma has taken part in many (if not all) forms of contribution within the Drupal community. Emma&#39;s current focus has put the code aside to support the people who contribute to Drupal. Her current responsibilities include being a member of the Drupal Community Working Group and the creator of the &#39;Being Human&#39; track for DrupalCon.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/tickets">Get tickets</a></p>
+
+<h2><br />
+	Accepted Sessions</h2>
+
+<p>We had a record breaking number of sessions submissions this year, making our job extremely difficult on how to choose the best content for this year&#39;s camp. &nbsp;We have 45 sessions spread across four concurrent rooms planned for Friday and Saturday.</p>
+
+<p>With sessions like&nbsp;<a href="https://www.midcamp.org/session/inclusive-development-using-styleguides-improve-website-accessibility">Inclusive Development: Using Styleguides to Improve Website Accessibility</a>;&nbsp;<a href="https://www.midcamp.org/session/understanding-drupal">Understanding Drupal</a>;&nbsp;<a href="https://www.midcamp.org/session/butler-did-it-putting-jenkins-work-you">The Butler Did It: Putting Jenkins To Work For You</a>; and&nbsp;<a href="https://www.midcamp.org/session/building-great-teams">Building Great Teams</a>, we have something for everyone!</p>
+
+<p><a class="btn" href="https://www.midcamp.org/sessions">View all sessions</a></p>
+
+<h2><br />
+	Training Day</h2>
+
+<p>On Thursday, we have four great full day Training sessions planned. &nbsp;We have lined up a group of incredible trainers who are going to donate their time to lead full day, in depth training sessions. &nbsp;Each session is $40, and is additional to the price of the camp.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/trainings">View all trainings sessions</a></p>
+
+<p><a href="http://www.midcamp.org/training/drupal-development-best-practice-workflows-pantheon"><img alt="David" src="https://www.midcamp.org/sites/default/files/styles/large/public/users/dsc_6889_sq_tight-cutout.png?itok=jO-MFMb8" style="border-radius: 50%; float: right; margin: 0 0 20px 20px; width: 200px; height: auto;" /></a></p>
+
+<h3><a href="https://www.midcamp.org/training/drupal-development-best-practice-workflows-pantheon">Drupal Development Best Practice Workflows on Pantheon</a></h3>
+
+<p>Pantheon is a website management platform for Drupal &amp; WordPress that provides lightning-fast hosting and best-in-breed web development tools for your team. Learn how to use Pantheon like a seasoned Drupal developer and level up your Drupal development game.</p>
+
+<p>We&#39;ll walk through time-saving development workflows on Pantheon&#39;s development platform where you&#39;ll be using Git and high-performance technologies like Varnish and Redis to keep your clients happy.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/training/drupal-development-best-practice-workflows-pantheon">Learn more or get your ticket now!</a><br />
+	&nbsp;</p>
+
+<p><a href="http://www.midcamp.org/training/introduction-drupal-8"><img alt="Jorge" src="https://www.midcamp.org/sites/default/files/styles/large/public/users/aaeaaqaaaaaaaargaaaajge3otc2mdlmltbimwetngyyyi04mjnllty5ymywnjhjndllza.jpg?itok=933MAcjB" style="border-radius: 50%; float: left; margin: 0 20px 20px 0; width: 200px; height: auto;" /></a></p>
+
+<h3><a href="https://www.midcamp.org/training/introduction-drupal-8">Introduction to Drupal 8</a></h3>
+
+<p>Drupal is known for being a powerful platform with a steep learning curve. This course will give you an introduction to the world of Drupal and soften that learning curve so you can get up-to-speed with Drupal quickly. We&#39;ll cover fundamental Drupal concepts and terminology, and give you the hands-on experience you need to dive deeper.</p>
+
+<p>Whether you&#39;re a developer using Drupal for the first time, a content editor looking for an introduction to Drupal administration, or a site builder wanting to know how to structure a new Drupal website, this course will get you started on the right foot.</p>
+
+<p>The course includes step-by-step exercises to help you understand the process of creating a Drupal site. It also includes independent exercises to help you think through the process of building out a website for your particular use case or organization.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/training/introduction-drupal-8">Learn more or get your ticket now!</a><br />
+	&nbsp;</p>
+
+<p><a href="http://www.midcamp.org/training/theming-drupal-8"><img alt="Drupalize.me Training Team" src="https://www.midcamp.org/sites/default/files/drupalizeme.png" style="float: right; margin: 0 0 20px 20px; width: 200px; height: auto;" /></a></p>
+
+<h3><a href="https://www.midcamp.org/training/theming-drupal-8">Theming Drupal 8</a></h3>
+
+<p>Themes combine HTML, CSS, JavaScript, and Drupal in order to make beautiful websites. Creating truly unique themes requires knowing how to use the Twig template language to manipulate HTML, how to add CSS and JavaScript assets in a way that&#39;s compatible with Drupal&#39;s caching, all while maintaining the flexibility that Drupal is known for.</p>
+
+<p>This workshop will familiarize front-end developers with Drupal 8&#39;s theme system through a combination of presentations, and hands-on exercises. Whether your goal is to theme your personal site, pass the Acquia front-end developer certification, or upgrade your skills for a job our goal is to provide students with a solid foundation on which to start and enough knowledge to continue to practice and learn on their own.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/training/theming-drupal-8">Learn more or get your ticket now!</a><br />
+	&nbsp;</p>
+
+<p><a href="http://www.midcamp.org/training/what-am-i-getting-myself-drupal-crash-course-non-developers"><img alt="Margaret" src="https://www.midcamp.org/sites/default/files/margaret-plett-photo.jpg" style="border-radius: 50%; float: left; margin: 0 20px 20px 0; width: 200px; height: auto;" /></a></p>
+
+<h3><a href="https://www.midcamp.org/training/what-am-i-getting-myself-drupal-crash-course-non-developers">What Am I Getting Myself Into? A Drupal Crash Course for Non-developers</a></h3>
+
+<p>Are you responsible for project management, content, or vendor selection and preparing to work with Drupal? This one-day training delivers all of the tools you need to get started. Delivered by an Acquia Certified Drupal Developer, this training will answer the questions you didn&rsquo;t even know to ask!</p>
+
+<p>Targeted to the non-developer, this training is perfect for individuals that need to get up and running in Drupal - fast! Attendees will benefit from a unique perspective at the intersection of Drupal expertise and marketing, that only Margaret can deliver as a former marketing executive and author of the Drupal 8 Acquia curricula. Individuals that are brand new to Drupal will walk away with the confidence to work within the Drupal framework and community.</p>
+
+<p><a class="btn" href="https://www.midcamp.org/training/what-am-i-getting-myself-drupal-crash-course-non-developers">Learn more or get your ticket now!</a><br />
+	&nbsp;</p>
+
+<h2>Sprints</h2>
+
+<p>At MidCamp 2016, the Sprint room was always abuzz with activity. &nbsp;There was <a href="http://www.marcdrummond.com/posts/2016/03/25/drupal-front-end-future">so</a> <a href="http://www.marcdrummond.com/posts/2016/04/12/drupal-theme-system-personas">much</a> <a href="https://ffwagency.com/blog/midcamp-recap-drupal-frontend-importance-events">activity</a> on those who work on the Frontend of Drupal, and a concentrated effort to get Drupal Commerce to it&#39;s first Release candidate.</p>
+
+<p>If you want to sprint, stop by these rooms any of the days. &nbsp;If you are interested in mentoring, or leading sprints, please contact <a href="mailto:midcampsprints@gmail.com">midcampsprints@gmail.com</a>. &nbsp;We ask if you are coming on Thursday and Sunday that you get a <a href="https://www.midcamp.org/tickets">free ticket</a> so we can make sure to get enough food and coffee.</p>
+
+<ul>
+	<li>Thursday sprints will take place in Room 220, with room for 80 people</li>
+	<li>Sprinting during sessions Friday and Saturday will take place in Room 120AB, starting after the keynote</li>
+	<li>Sunday sprints will take place&nbsp;in Room 314A and 314B, with room for 60 people in each room</li>
+</ul>
+
+<h2><br />
+	Sponsor MidCamp 2017!</h2>
+
+<p>Are you or your company interested in becoming a sponsor for the 2017 event? Sponsoring MidCamp is a great way to promote your company, organization, or product and to show your support for Drupal and the Midwest Drupal community. It also is a great opportunity to connect with potential customers and recruit talent.</p>
+
+<p><strong>Find out more at:</strong></p>
+
+<ul>
+	<li><a href="https://www.midcamp.org/become-a-sponsor">2017 Sponsor Prospectus</a></li>
+	<li><a href="https://www.midcamp.org/sponsors">View our amazing sponsors!</a></li>
+</ul>
+
+<p>Thanks for reading this far! &nbsp;We hope to see you at the camp!</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-7 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/243.html">Sprints and Training at MidCamp 2017</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Wednesday, February 1, 2017 - 10:54pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>We are putting together some great programming for you here at MidCamp 2017 headquarters.&nbsp; In addition to the impressive session proposals were are busy reading, we have teams working hard to put together Code Sprints and Full Day Training sessions.</p>
+
+<h2>Sprinting at MidCamp 2017</h2>
+
+<p>At MidCamp 2016, the Sprint room was always abuzz with activity. &nbsp;There was <a href="http://www.marcdrummond.com/posts/2016/03/25/drupal-front-end-future">so</a> <a href="http://www.marcdrummond.com/posts/2016/04/12/drupal-theme-system-personas">much</a> <a href="https://ffwagency.com/blog/midcamp-recap-drupal-frontend-importance-events">activity</a> on those who work on the Frontend of Drupal, and a concentrated effort to get Drupal Commerce to it&#39;s first Release candidate.</p>
+
+<p>What will be worked on, discussed, built, and fixed at this year&#39;s MidCamp? &nbsp;You can have a say. &nbsp;We are currently looking for Sprint leads and mentors. &nbsp;</p>
+
+<p>Sprint leads are mentor to mentors; coordinate with the community, and helps organize what gets sprinted on.</p>
+
+<p>Mentors help new contributors get setup, find issues, and assist them in their sprinting.</p>
+
+<p>If you are interested in being a Sprint lead, or mentor, please email us at <a href="mailto:midcampsprints@gmail.com">midcampsprints@gmail.com</a>.</p>
+
+<h2>Training at MidCamp 2017</h2>
+
+<p>We have lined up 4 great training for Thurday, March 30th, 2017.&nbsp; Joining us will be a great group of amazing, professional trainers who will be offering full day training sessions.</p>
+
+<h3><a href="https://www.midcamp.org/training/introduction-drupal-8">Introduction to Drupal 8</a></h3>
+
+<p>Lead by Jorge Diaz, Acquia Certified Grand Master Developer, Drupal Front-end Developer &amp; Themer at Evolving Web</p>
+
+<p>Drupal is known for being a powerful platform with a steep learning curve. This course will give you an introduction to the world of Drupal and soften that learning curve so you can get up-to-speed with Drupal quickly. We&#39;ll cover fundamental Drupal concepts and terminology, and give you the hands-on experience you need to dive deeper.</p>
+
+<h3><a href="https://www.midcamp.org/training/theming-drupal-8">Theming Drupal 8</a></h3>
+
+<p>Blake Hall,&nbsp;Senior Developer &amp; Trainer and Joe Schindelar, Lead Developer &amp; Lead Trainer, Drupalize.me</p>
+
+<p>Themes combine HTML, CSS, JavaScript, and Drupal in order to make beautiful websites. Creating truly unique themes requires knowing how to use the Twig template language to manipulate HTML, how to add CSS and JavaScript assets in a way that&#39;s compatible with Drupal&#39;s caching, all while maintaining the flexibility that Drupal is known for.</p>
+
+<h3><a href="https://www.midcamp.org/training/drupal-development-best-practice-workflows-pantheon">Drupal Development Best Practice Workflows on Pantheon</a></h3>
+
+<p>David Needham, Agency &amp; Community Training Manager at Pantheon</p>
+
+<p>Pantheon is a website management platform for Drupal &amp; WordPress that provides lightning-fast hosting and best-in-breed web development tools for your team. Learn how to use Pantheon like a seasoned Drupal developer and level up your Drupal development game.</p>
+
+<h3><a href="https://www.midcamp.org/trainings">What Am I Getting Myself Into? A Drupal Crash Course for Non-developers</a></h3>
+
+<p>Are you responsible for project management, content, or vendor selection and preparing to work with Drupal? This one-day training delivers all of the tools you need to get started. Delivered by an Acquia Certified Drupal Developer, this training will answer the questions you didn&rsquo;t even know to ask!</p>
+
+<p>Space is limited, so be sure to visit our <a href="https://www.midcamp.org/trainings">training page</a> and purchase your tickets today.&nbsp; Please note, training tickets are for Thursday only and are in addition to camp tickets.</p>
+
+<h2>Sponsor MidCamp</h2>
+
+<p>We&#39;re currently seeking Lunch and Coffee sponsors for MidCamp 2017. &nbsp;Lunch is the&nbsp;perfect opportunity to get your name in front of all of the attendees!&nbsp; Drupalers like coffee. Some might even say Drupalers love coffee! &nbsp;Earn the gratitude of our attendees by having your name and logo associated with the liquid refueling station! We are looking to four sponsors for each day to cover the costs. &nbsp;</p>
+
+<p><a href="https://www.midcamp.org/become-a-sponsor">Find out more info about sponsoring</a></p>
+
+<h2>Join Us</h2>
+
+<ul>
+	<li><a href="https://www.midcamp.org/tickets">Buy a Ticket</a></li>
+	<li><a href="https://www.midcamp.org/submit-session">Submit a Session</a></li>
+	<li><a href="https://www.midcamp.org/session-submissions">See the Submitted Session list</a></li>
+	<li><a href="https://www.midcamp.org/sponsors">Check out our awesome sponsors!</a></li>
+</ul>
+
+<h2>Stay connected:</h2>
+
+<ul>
+	<li>Visit&nbsp;<a href="https://www.midcamp.org">http://www.midcamp.org</a></li>
+	<li>Like <a href="https://www.facebook.com/MidCamp/">Midcamp on Facebook</a></li>
+	<li>Follow&nbsp;<a href="https://twitter.com/midwestcamp">@midwestcamp&nbsp;on twitter</a></li>
+	<li>Watch&nbsp;<a href="https://www.youtube.com/c/MidCampOrg">MidCamp on Youtube</a></li>
+</ul>
+</div>  </div>  </div>
+  <div class="views-row views-row-8 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/233.html">Vote for your favorite MidCamp T-Shirt Design</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Saturday, January 28, 2017 - 10:05am</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p><img alt="MidCamp T-Shirts" src="https://www.midcamp.org/sites/default/files/news/2017/01/midcamp-t-shirts.jpg" /></p>
+
+<h2>MidCamp 2017 T-Shirts</h2>
+
+<p>We need your help. We have all these great options for this year&#39;s MidCamp T-Shirts, and we just can&#39;t decide which one to make. Please fill out our poll to make your voice heard!</p>
+
+<p><a class="btn" href="https://www.midcamp.org/news/vote-your-favorite-midcamp-t-shirt-design" style="margin:0 auto; width: 200px;">Vote for your favorite</a></p>
+
+<p><iframe frameborder="0" height="3000" marginheight="0" marginwidth="0" src="https://docs.google.com/forms/d/e/1FAIpQLSfuFJ4vjzu_gEI3euHX4BvBjTYrICo41rnQI4GMI4sHDH8yOw/viewform?embedded=true" width="940">Visit the site for the poll.</iframe></p>
+
+<h2>Sponsor MidCamp</h2>
+
+<p>We&#39;re currently seeking Lunch and Coffee sponsors for MidCamp 2017. &nbsp;Lunch is the&nbsp;perfect opportunity to get your name in front of all of the attendees!&nbsp; Drupalers like coffee. Some might even say Drupalers love coffee! &nbsp;Earn the gratitude of our attendees by having your name and logo associated with the liquid refueling station! We are looking to four sponsors for each day to cover the costs. &nbsp;<a href="https://www.midcamp.org/become-a-sponsor">Find out more</a>.</p>
+
+<h2>Join Us</h2>
+
+<ul>
+	<li><a href="https://www.midcamp.org/tickets">Buy a Ticket</a></li>
+	<li><a href="https://www.midcamp.org/submit-session">Submit a Session</a></li>
+	<li><a href="https://www.midcamp.org/session-submissions">See the Submitted Session list</a></li>
+	<li><a href="https://www.midcamp.org/sponsors">Check out our awesome sponsors!</a></li>
+</ul>
+
+<h2>Stay connected:</h2>
+
+<ul>
+	<li>Visit&nbsp;<a href="https://www.midcamp.org">http://www.midcamp.org</a></li>
+	<li>Like <a href="https://www.facebook.com/MidCamp/">Midcamp on Facebook</a></li>
+	<li>Follow&nbsp;<a href="https://twitter.com/midwestcamp">@midwestcamp&nbsp;on twitter</a></li>
+	<li>Watch&nbsp;<a href="https://www.youtube.com/c/MidCampOrg">MidCamp on Youtube</a></li>
+</ul>
+</div>  </div>  </div>
+  <div class="views-row views-row-9 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/219.html">Submit A Session, Buy A Ticket, Join Us At MidCamp 2017!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Tuesday, January 24, 2017 - 9:05pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><h2>Session Submissions are now open</h2>
+
+<p>MidCamp is looking for folks just like you to speak to our Drupal audience! Experienced speakers are always welcome, but our camp is also a great place to start for first-time speakers.</p>
+
+<p>MidCamp is soliciting sessions geared toward beginner through advanced Drupal users. Know someone who might be a new voice, but has something to say? Please suggest they submit a session.</p>
+
+<p><strong>Find out more at:</strong></p>
+
+<ul>
+	<li><a href="https://www.midcamp.org/node/add/session">Submit your Session</a></li>
+	<li><a href="https://www.midcamp.org/submit-session">Session FAQs</a></li>
+	<li><a href="https://www.midcamp.org/session-topics">Session Topics</a></li>
+	<li><a href="https://www.midcamp.org/speaker-terms-and-conditions">Speaker Terms and Conditions</a></li>
+	<li><a href="https://www.midcamp.org/session-submissions">View the list of Submitted Sessions</a></li>
+</ul>
+
+<h2>Buy a Ticket</h2>
+
+<p>Tickets and Individual Sponsorships are available on the site for MidCamp 2017.&nbsp;<a href="https://www.midcamp.org/tickets">Click here to get yours!</a></p>
+
+<h2>Schedule of Events</h2>
+
+<ul>
+	<li>Thursday, March 30th, 2017 - Training and Sprints</li>
+	<li>Friday, March 31st, 2017 - Sessions and Social</li>
+	<li>Saturday, April 1st, 2017 - Sessions and Social</li>
+	<li>Sunday, April 2nd, 2017 - Sprints</li>
+</ul>
+
+<h2>Sponsor MidCamp 2017!</h2>
+
+<p>Are you or your company interested in becoming a sponsor for the 2017 event? Sponsoring MidCamp is a great way to promote your company, organization, or product and to show your support for Drupal and the Midwest Drupal community. It also is a great opportunity to connect with potential customers and recruit talent.</p>
+
+<p><strong>Find out more at:</strong></p>
+
+<ul>
+	<li><a href="https://www.midcamp.org/become-a-sponsor">2017 Sponsor Prospectus</a></li>
+	<li><a href="https://www.midcamp.org/sponsors">View our amazing sponsors!</a></li>
+</ul>
+
+<h2>Stay connected:</h2>
+
+<ul>
+	<li>Visit&nbsp;<a href="https://www.midcamp.org">https://www.midcamp.org</a></li>
+	<li>Like <a href="https://www.facebook.com/MidCamp/">Midcamp on Facebook</a></li>
+	<li>Follow&nbsp;<a href="https://twitter.com/midwestcamp">@midwestcamp&nbsp;on twitter</a></li>
+	<li>Watch&nbsp;<a href="https://www.youtube.com/channel/UCWf6JWaRR8GIHbrZyDFhV3A">MidCamp on Youtube</a></li>
+</ul>
+</div>  </div>  </div>
+  <div class="views-row views-row-10 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/189.html">MidCamp 2017 Sponsor Prospectus Available</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 9:55pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>We&#39;ve been hard at work planning next spring&#39;s camp, and would love help from you and your companies! &nbsp;We have a great new venue, additional rooms, and even more desire to bring together the Drupal community, and bring out community to others.</p>
+
+<p>MidCamp 2017 is moving to the DePaul University, Lincoln Park Campus in Chicago on Thursday, March 30th through Sunday, April 2nd, 2017 and will be bigger, better and even more enjoyable.<br />
+	<br />
+	For 2017, MidCamp offers a variety of sponsorship packages that are designed to provide improved exposure, greater flexibility, and more opportunities for companies and organizations to sponsor, regardless of budget. By directly sponsoring MidCamp&#39;s venue, meals, events, and entertainment, attendees will better understand the direct connection between your sponsorship dollars and an enjoyable, successful camp.&nbsp;<br />
+	<br />
+	Because there are only a limited number of sponsors for each package, it also means that your brand will better stand out in the crowd, resulting in greater return on investment.<br />
+	<br />
+	Download our sponsor prospectus here:<br />
+	<a href="../sponsor-midcamp-2017-prospectus.pdf">http://2017.midcamp.org/sponsor-midcamp-2017-prospectus.pdf</a></p>
+
+<h2>A slice of MidCamp in&nbsp;Ireland:</h2>
+
+<p>The one and only Avi Schwab presented MidCamp Madness and Planning Human-Centered Events at Drupalcon Dublin in September. &nbsp;It is a window into the things that all of MidCamp&#39;s volunteer organizers have thought of, and learned, on how we put together the event with the attendees in mind. &nbsp;If you weren&#39;t there, you can watch and listed to the presentation at:&nbsp;<br />
+	<br />
+	<a href="https://events.drupal.org/dublin2016/sessions/midcamp-madness-and-planning-human-centered-events">https://events.drupal.org/dublin2016/sessions/midcamp-madness-and-planning-human-centered-events</a></p>
+</div>  </div>  </div>
+  <div class="views-row views-row-11 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/188.html">MidCamp 2017 Save the Date</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 9:56pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><h2>Save the Date for MidCamp 2017</h2>
+
+<h3>30 March - 2 April, 2017</h3>
+
+<p>We are excited to announce that&nbsp;MidCamp 2017 - Midwest Drupal Camp, will return to Chicago March 30th through April 2nd, 2017. We hope to have a brand new venue to share with you all soon also!</p>
+
+<p>MidCamp 2016 provided almost&nbsp;300 attendees with training, sprints, and almost 40 sessions over 4 days in the heart of Chicago.&nbsp; We hope you will join us.</p>
+
+<h2>At DrupalCon New Orleans?</h2>
+
+<p>Many of our organizers will be getting together today at lunch to discuss all things MidCamp. If you are a volunteer, past attendee, or just an interested party to the process, please follow @midwestcamp on twitter or join the MidCamp Slack.</p>
+
+<h2>Stay connected:</h2>
+
+<ul>
+	<li>Visit <a href="../index.html">http://2017.midcamp.org</a></li>
+	<li><a href="https://www.facebook.com/MidCamp/">Like Midcamp on Facebook</a></li>
+	<li><a href="https://twitter.com/midwestcamp">Follow @midwestcamp on twitter</a></li>
+	<li><a href="https://www.youtube.com/c/MidCampOrg">Watch MidCamp on Youtube</a></li>
+</ul>
+
+<p><em>&quot;The time is coming,&quot; the walrus said, &quot;to talk of many things&hellip;&quot;</em></p>
+</div>  </div>  </div>
+  <div class="views-row views-row-12 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/187.html">MidCamp 2016 Recap</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 9:56pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Midcamp 2016 Recap - Where the Drupal community comes together!</p>
+
+<p>MidCamp 2016, the Midwest Drupal Camp was a roaring success.&nbsp; We had 36 Sessions and 1 keynote were spread across the University of Chicago Student Center West,.&nbsp; All of the sessions were successfully recorded by our amazing AV team and shared within hours on the Midcamp YouTube channel.&nbsp; Our sponsor tables were busy; our Birds of a Feather discussions were many; and our socials were social!<br />
+	<br />
+	Read the rest of Jim Birch&#39;s Recap at:<br />
+	<a href="http://jimbir.ch/blog/midcamp-2016-recap">http://jimbir.ch/blog/midcamp-2016-recap</a></p>
+
+<h2>Upcoming Events</h2>
+
+<p>Thur, 18 April at 6:00 PM, Chicago, Illinois<br />
+	<strong>APRIL Drupal Chicago General Meetup: Commerce 2.x</strong><br />
+	By: Matt Glaman of Commerce Guys</p>
+
+<p>Wed, 18 May at 9:30 AM, Chicago, Illinois<br />
+	<strong>Introduction to Drupal 8 - Training in Chicago</strong><br />
+	By: Evolving Web</p>
+
+<p>Thu, 19 May at 9:30 AM, Chicago, Illinois<br />
+	<strong>Drupal 8 Theming - Training in Chicago</strong><br />
+	By: Evolving Web</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-13 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/177.html">MidCamp Needs You!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><h3>MidCamp would not be possible without folks like you helping out.</h3><p>Do you have a bit of time to spare? We need help with:</p><ul><li><strong>setup</strong>&nbsp;- great for early risers who can meet us around&nbsp;7:30 am on Friday and Saturday to help set things up</li><li><strong>registration</strong>&nbsp;- help fellow attendees check in and get their badges</li><li><strong>room monitors</strong>&nbsp;- go to your session of choice and&nbsp;assist the speaker (alert them about time left, count attendees in the room, etc)</li><li><strong>A/V</strong>&nbsp;- assist with session recording setup (can also be the room monitor)</li><li><strong>teardown</strong>&nbsp;- the opposite of setup</li></ul><p>Would you like to help? Click <a href="http://bit.ly/midcamp-volunteer" target="_blank">here!</a></div>  </div>  </div>
+  <div class="views-row views-row-14 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/171.html">MidCamp 2016 will have Live Captioning of our Keynote and all 9 sessions in the BlackMesh room</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Midcamp has tried since its inception to be the one of the most accessible Drupal camp, and technology conferences available.&nbsp; In 2015, MidCamp published our accessibility information early on <a href="http://2015.midcamp.org/venue/up-close">http://2015.midcamp.org/venue/up-close</a> and <a href="http://yesct.net/making-midcamp-accessible">http://yesct.net/making-midcamp-accessible</a>, which helped attendees know in advance the layout of the conference.&nbsp; I was witness to a few attendees who thanked the volunteers for this information, and explained that it was a major reason in why they attended.&nbsp; I was truly in awe.</p><p>Early in the planning of Midcamp 2016, Cathy Theys introduced the idea of Live Captioning as much of the event as we could.&nbsp; Thanks to sponsor BlackMesh, the keynote address, and all <a href="https://2016.midcamp.org/sessions?field_track_value_op=or&amp;field_drupal_specific_value=All&amp;field_beginners_value=All&amp;field_length_value=All&amp;room=4">9 sessions</a> in the BlackMesh room will be live captioned.</p><p>Captions, composed of text, are used by people who are deaf or hard of hearing to access content delivered by spoken words and sounds. In live captioning, real-time captions or Computer Assisted Real-time Translation (CART) are created as an event takes place. A captioner uses a stenotype machine with a phonetic keyboard and special software. A computer translates the phonetic symbols into captions almost instantaneously and will be displayed on a second projector screen. (source: <a href="http://www.washington.edu/doit/what-real-time-captioning">washington.edu</a>) <a href="http://www.acscaptions.com/">ACS (alternative communication services)</a> will be on-site, providing the captioning service for us.</p><p>&nbsp;</p></div>  </div>  </div>
+  <div class="views-row views-row-15 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/148.html">Thank you!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 8:13pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta http-equiv="Content-Style-Type" content="text/css" /><meta name="Generator" content="Cocoa HTML Writer" /><meta name="CocoaVersion" content="1404.34" />
+	<style type="text/css">p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 15.0px Helvetica; color: #2c2d30; -webkit-text-stroke: #2c2d30; background-color: #f9f9f9}
+span.s1 {font-kerning: none}
+	</style>
+</p>
+
+<p>MidCamp 2016 was a huge success! Thank you to everyone who helped, supported, spoke and attended. Check out <a href="https://www.flickr.com/photos/midcamp/">MidCamp 2016 photos on Flickr.</a> If you upload your own,&nbsp;please tag them #MidCamp and tweet at us (or email) so we can see the photos you took!&nbsp;Recordings of sessions are on the&nbsp;<a href="https://www.youtube.com/channel/UCWf6JWaRR8GIHbrZyDFhV3A/feed">MidCamp youtube channel</a>&nbsp;as well!</p>
+</div>  </div>  </div>
+  <div class="views-row views-row-16 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/129.html">Help us make MidCamp 2016 a success!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p dir="ltr">Adding on sponsorships for fun and memorable parts of MidCamp is a great way to get your name in front of everyone. Make no doubt, attendees will be incredibly grateful for the availability of coffee, a delicious lunch break, and live captions in sessions.</p><p dir="ltr"><a href="https://2016.midcamp.org/become-a-sponsor">Learn More</a></p></div>  </div>  </div>
+  <div class="views-row views-row-17 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/128.html">Can&#039;t attend? You can support!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p><b id="docs-internal-guid-cf9838ae-d7ac-3e4a-2065-ae5e01e07fa8">Can&rsquo;t attend MidCamp but still want to support us? On-site sponsorships are a great way to do so! </b></p><p><a href="https://2016.midcamp.org/become-a-sponsor">Learn More</a></p></div>  </div>  </div>
+  <div class="views-row views-row-18 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/27.html">Sprints are Everyday. Sunday for sure!</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>For people not going to training, you can sprint all day Thursday. And even on session days if you like.</p><p>But, <strong>Sunday</strong>&nbsp;is our main dedicated sprint day. Everyone should join us!&nbsp;</p> <p><a href="http://2016.midcamp.org/sprints">Read more about sprints</a> and <a href="http://bit.ly/midcamp-2016-sprint">sign up</a>.</div>  </div>  </div>
+  <div class="views-row views-row-19 views-row-odd">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/24.html">Session Proposals are Open</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p><a href="../session-faq.html">Read about our session proposal process.</a> Please <a href="https://2017.midcamp.org/node/add/session">submit your session proposal</a>.</p><p>Deadline: Wednesday Feb 3 11:55 pm CST.</p></div>  </div>  </div>
+  <div class="views-row views-row-20 views-row-even">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/23.html">Sponsor MidCamp 2016</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><p>Grab the opportunity to help us put on MidCamp 2016 by becoming a Sponsor.</p><p dir="ltr">You can sponsor vital pieces of the day including coffee, breakfast, the evening social, live captions of sessions and more.</p><p><a href="../become-a-sponsor.html">Learn more.</a></p></div>  </div>  </div>
+  <div class="views-row views-row-21 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-title">        <h3 class="field-content"><a href="../node/25.html">Save the Date for MidCamp 2016</a></h3>  </div>  
+  <div class="views-field views-field-changed">    <span class="views-label views-label-changed">Updated: </span>    <span class="field-content">Sunday, January 15, 2017 - 7:06pm</span>  </div>  
+  <div class="views-field views-field-field-image">        <div class="field-content"></div>  </div>  
+  <div class="views-field views-field-body">        <div class="field-content"><h2>Save the Date for<br />MidCamp 2016</h2><div class="event-wrapper" itemscope="" itemtype="http://schema.org/Event"><div class="event-date" content="2016-03-17T09:00" itemprop="startDate">March 17th - 20th, 2016</div><div class="event-title" itemprop="name"><strong>MidCamp 2016 - Midwest Drupal Camp</strong></div><div class="event-venue" itemprop="location" itemscope="" itemtype="http://schema.org/Place"><span itemprop="name">UIC Student Center West</span><div class="address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"><span itemprop="streetAddress">828 S. Wolcott Ave.</span><br /><span itemprop="addressLocality">Chicago</span>, <span itemprop="addressRegion">IL</span> <span itemprop="postalCode">60612</span></div></div></div></div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>          </div>
+          </div>
+</div>
+<div class="footer-wrapper">
+    <footer id="footer" class="footer__region region region-footer">
+    <div id="block-panels-mini-sponsor-footer-logos" class="block block-panels-mini first odd">
+  <div class="block-inner">
+    <div id="block-panels_mini-sponsor_footer_logos-ajax-content" class="ajaxblocks-wrapper-8"><script type="text/javascript"></script><noscript><div class="panel-pane pane-views-panes pane-random-sponsor-panel-pane-1" >
+  <div class="pane-inner">
+    
+              <h2 class="pane-title">MidCamp 2017 Sponsors</h2>
+        
+    
+    <div class="view view-random-sponsor view-id-random_sponsor view-display-id-panel_pane_1 view-dom-id-0a4d18c28f740f5fc8b9aacc68ab2661">
+        
+  
+  
+      <div class="view-content">
+          <ul class="sponsors">          <li class="">  
+          <a href="../node/326.html"><img src="../sites/default/files/styles/sponsor_footer/public/sponsors/hs2logoonblack.png%3Fitok=EBS3OmnC" width="60" height="60" alt="HS2 Solutions" /></a>  </li>
+          <li class="">  
+          <a href="../node/277.html"><img src="../sites/default/files/styles/sponsor_footer/public/sponsors/buildamodule.png%3Fitok=YMuwVyB5" width="200" height="60" alt="Build-A-Module" /></a>  </li>
+          <li class="">  
+          <a href="../node/183.html"><img src="../sites/default/files/styles/sponsor_footer/public/sponsors/palantirnet.png%3Fitok=g5W_AlO_" width="265" height="60" alt="Palantir.net" /></a>  </li>
+          <li class="">  
+          <a href="../node/329.html"><img src="../sites/default/files/styles/sponsor_footer/public/sponsors/softescu-3-cr.png%3Fitok=r7iSp3LU" width="150" height="46" alt="Softescu logo" /></a>  </li>
+          <li class="">  
+          <a href="../node/314.html"><img src="../sites/default/files/styles/sponsor_footer/public/sponsors/drupalizeme.png%3Fitok=yfZ-Egw6" width="138" height="60" alt="Drupalize.Me" /></a>  </li>
+          <li class="">  
+          <a href="../node/321.html"><img src="../sites/default/files/styles/sponsor_footer/public/sponsors/xeno-media-logo.png%3Fitok=lWYs8hYI" width="226" height="60" alt="Xeno Media" /></a>  </li>
+      </ul>    </div>
+  
+  
+  
+  
+      <div class="view-footer">
+      <a href="../sponsors.html" title="View all the sponsors">View all our Sponsors</a>    </div>
+  
+  
+</div>
+    
+      </div>
+</div>
+</noscript></div>
+              </div>
+</div>
+<div id="block-menu-block-1" class="block block-menu-block last even" role="navigation">
+  <div class="block-inner">
+    <div class="menu-block-wrapper menu-block-1 menu-name-menu-footer-navigation parent-mlid-0 menu-level-1">
+  <ul class="menu__footer-navigation links inline inline-links"><li class="menu__item is-leaf first leaf menu-mlid-697"><a href="../node/8.html" title="" class="menu__link">Code of Conduct</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-1195"><a href="../midcampagram.html" title="" class="menu__link">MidCampagram</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-680"><a href="https://twitter.com/MidwestCamp" title="" class="menu__link">Twitter</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-681"><a href="https://www.facebook.com/MidCamp" title="" class="menu__link">Facebook</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-682"><a href="https://plus.google.com/+MidCampOrg" title="" class="menu__link">Google+</a></li>
+<li class="menu__item is-leaf leaf menu-mlid-683"><a href="https://twitter.com/search?f=realtime&amp;q=%23MidCamp&amp;src=typd" title="" class="menu__link">#MidCamp</a></li>
+<li class="menu__item is-leaf last leaf menu-mlid-1274"><a href="https://joind.in/event/midcamp-2017" title="" class="menu__link">MidCamp on Joind.in</a></li>
+</ul></div>
+
+              </div>
+</div>
+  </footer>
+</div>
+  <script src="../sites/default/files/js/js_FnH2o2qLd7AzzNTeexowTxH36noqu2XC7h3myVd8CSo.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"d3b95d210b","applicationID":"42618565","transactionName":"MwQHYBNZX0oDB0ENXgpOJFcVUV5XTRJcAUYXPhVVBl0=","queueTime":0,"applicationTime":274,"atts":"H0MEFltDTEQ=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
